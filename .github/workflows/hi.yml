@@ -16,6 +16,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: jmassardo/composite_actions/say-hello@v2
-      with: 
-        name: OctoCat
+    - uses: JasonEtco/create-an-issue@v2
+      env:
+        num: 12345
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
