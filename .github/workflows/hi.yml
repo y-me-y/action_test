@@ -13,6 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: JasonEtco/create-an-issue@v2
+      with:
+        filename: .github/ISSUE_TEMPLATE/action_issue.md
       env:
         num: 12345
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
