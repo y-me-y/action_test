@@ -12,7 +12,7 @@ jobs:
       - name: generate matrix
         id: generate-matrix
         run: |
-          export MATRIX_JSON='{"projects": ["project1","project2","project3"]}'
+          export MATRIX_JSON='{"projects": ["project1","project2","project3","project4","project5"]}'
           echo "::set-output name=matrix::${MATRIX_JSON}"
   build:
     runs-on: ubuntu-latest
