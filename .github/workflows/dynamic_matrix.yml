@@ -21,4 +21,4 @@ jobs:
       matrix: ${{ fromJson(needs.metadata.outputs.matrix) }}
     steps:
       - name: Run a one-line script
-        run: echo "Hello, world ${{ matrix.projects }} !
+        run: echo "Hello, world ${{ matrix.projects }} !"
