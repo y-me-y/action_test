@@ -12,4 +12,4 @@ Final roll is **{{env.num}}**
 
 
 Today is: {{ date | date('dddd, MMMM Do h:mm') }}
-Next week will be {{ date | date('dddd, MMMM Do h:mm').add(7, 'days') }}
+Next week will be {{ date.add(7, 'days') | date('dddd, MMMM Do h:mm') }}
