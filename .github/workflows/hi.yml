@@ -12,9 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: JasonEtco/create-an-issue@v2
-      with:
-        filename: .github/ISSUE_TEMPLATE/action_issue.md
+    - uses: lowply/issue-from-template@v2
       env:
-        num: 12345
+        IFT_TEMPLATE_NAME: .github/ISSUE_TEMPLATE/action_issue.md
+        ADD_DATES: 7
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
