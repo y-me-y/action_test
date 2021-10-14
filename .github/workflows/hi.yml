@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: lowply/issue-from-template@v1
+    - uses: lowply/issue-from-template@v0.1.3
       env:
         IFT_TEMPLATE_NAME: .github/ISSUE_TEMPLATE/action_issue.md
         ADD_DATES: 7
