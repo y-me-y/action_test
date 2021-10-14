@@ -1,7 +1,7 @@
 ---
 name: YAHTZEE!!!
 about: Template for actions testing
-title: Played Yahtzee! }}
+title: Played Yahtzee!
 labels: ''
 assignees: ''
 
