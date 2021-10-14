@@ -7,7 +7,5 @@ assignees: ''
 
 ---
 
-Someone just played a game of Yahtzee: 
-Final roll is **{{env.num}}**
 
 test {{ .WeekNumber }}, {{ .WeekNumberYear }} (Week of {{ .WeekStartDate }})'
