@@ -5,7 +5,7 @@ on:
     types: [opened]
 
 jobs:
-  build:
+  process-issue:
     if: contains(github.event.issue.labels.*.name, 'new-topic')
     runs-on: ubuntu-latest
     steps:
