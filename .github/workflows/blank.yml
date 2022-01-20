@@ -1,0 +1,14 @@
+name: issue_comments
+
+on: issue_comment
+
+jobs:
+  process-issue:
+    if: contains(github.event.issue.labels.*.name, 'new-topic') && ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo A comment on issue $NUMBER
+        env:
+          NUMBER: ${{ github.event.issue.number }}
