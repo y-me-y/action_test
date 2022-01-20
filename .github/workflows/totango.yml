@@ -3,19 +3,17 @@ name: totango
 on:
   issues:
     types: [opened]
+  issue_comment:
 
 jobs:
   process-issue:
-    if: contains(github.event.issue.labels.*.name, 'new-topic')
+    # Only run if the issue has the correct label or is an issue comment
+    if: contains(github.event.issue.labels.*.name, 'totango-sync')  && ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo $EVENT_CONTEXT
-        env:
-          EVENT_CONTEXT: ${{ toJSON(github) }}
-#     - uses: jmassardo/issues-to-totango@main
-#       with:
-#         ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
-#         APP_TOKEN: ${{ secrets.APP_TOKEN }}
-#         ACTIVITY_TYPE: "adoption"
-#         TOUCHPOINT_REASON: "e53621bc-f66a-49f0-a886-537b5c64df22"
+    - uses: jmassardo/issues-to-totango@jrm/support-comments
+      with:
+        ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+        APP_TOKEN: ${{ secrets.APP_TOKEN }}
+        ACTIVITY_TYPE: "adoption"
+        TOUCHPOINT_REASON: "e53621bc-f66a-49f0-a886-537b5c64df22"
