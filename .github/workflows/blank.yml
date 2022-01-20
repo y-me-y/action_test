@@ -13,4 +13,4 @@ jobs:
         env:
           USER: ${{ github.event.issue.user.login }}
           NUMBER: ${{ github.event.issue.number }}
-          BODY: ${{ github.event.issue.body }}
+          BODY: ${{ github.event.issue }}
