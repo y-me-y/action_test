@@ -9,9 +9,13 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'new-topic')
     runs-on: ubuntu-latest
     steps:
-    - uses: jmassardo/issues-to-totango@main
-      with:
-        ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
-        APP_TOKEN: ${{ secrets.APP_TOKEN }}
-        ACTIVITY_TYPE: "adoption"
-        TOUCHPOINT_REASON: "e53621bc-f66a-49f0-a886-537b5c64df22"
+      - run: |
+          echo $EVENT_CONTEXT
+        env:
+          EVENT_CONTEXT: ${{ toJSON(github) }}
+#     - uses: jmassardo/issues-to-totango@main
+#       with:
+#         ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+#         APP_TOKEN: ${{ secrets.APP_TOKEN }}
+#         ACTIVITY_TYPE: "adoption"
+#         TOUCHPOINT_REASON: "e53621bc-f66a-49f0-a886-537b5c64df22"
