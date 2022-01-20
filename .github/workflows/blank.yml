@@ -9,6 +9,8 @@ jobs:
 
     steps:
       - run: |
-          echo A comment on issue $NUMBER
+          echo $USER commented on issue $NUMBER. Comment body: $BODY
         env:
+          USER: ${{ github.event.issue.user.login }}
           NUMBER: ${{ github.event.issue.number }}
+          BODY: ${{ github.event.issue.body }}
