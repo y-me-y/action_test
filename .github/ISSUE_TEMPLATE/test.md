@@ -2,7 +2,7 @@
 name: NEW TOPIC
 about: Issue template for collaborating on various topics as needed.
 title: "[New Topic]: replace_with_topic_title"
-labels: 'new-topic, bug'
+labels: 'new-topic, totango-sync'
 assignees: 'jmassardo'
 ---
 
