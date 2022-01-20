@@ -14,3 +14,9 @@ jobs:
           USER: ${{ github.event.comment.user.login }}
           NUMBER: ${{ github.event.issue.number }}
           BODY: ${{ github.event.comment.body }}
+
+      - run: |
+          echo $EVENT_CONTEXT
+        env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        
