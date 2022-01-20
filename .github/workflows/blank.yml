@@ -11,6 +11,6 @@ jobs:
       - run: |
           echo $USER commented on issue $NUMBER. Comment body: $BODY
         env:
-          USER: ${{ github.event.issue.user.login }}
+          USER: ${{ github.event.comment.user.login }}
           NUMBER: ${{ github.event.issue.number }}
-          BODY: ${{ github.event.issue }}
+          BODY: ${{ github.event.comment.body }}
