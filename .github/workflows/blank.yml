@@ -1,6 +1,9 @@
 name: issue_comments
 
-on: issue_comment
+on:
+  issues:
+    types: [opened]
+  issue_comment:
 
 jobs:
   process-issue:
@@ -19,4 +22,9 @@ jobs:
           echo $EVENT_CONTEXT
         env:
           EVENT_CONTEXT: ${{ toJSON(github) }}
+
+      - run: |
+          echo $EVENT_NAME
+        env:
+          EVENT_NAME: ${{ toJSON(github.event_name) }}
         
