@@ -2,7 +2,7 @@ name: totango
 
 on:
   issues:
-    types: [opened]
+    types: [opened, closed]
   issue_comment:
 
 jobs:
