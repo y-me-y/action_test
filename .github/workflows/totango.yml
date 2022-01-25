@@ -15,6 +15,6 @@ jobs:
       with:
         ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
         APP_TOKEN: ${{ secrets.APP_TOKEN }}
-        ACTIVITY_TYPE: "adoption"
-        TOUCHPOINT_TYPE: "7112c2e3-294a-490a-8307-eba7f30c1cd7"
-        TOUCHPOINT_REASON: "8c91d24d-09aa-4d3e-a3c4-b3782803c33b"
+        ACTIVITY_TYPE: ${{ secrets.ACTIVITY_TYPE }}
+        TOUCHPOINT_TYPE: ${{ secrets.TOUCHPOINT_TYPE }}
+        TOUCHPOINT_TAGS: ${{ secrets.TOUCHPOINT_TAGS }}
