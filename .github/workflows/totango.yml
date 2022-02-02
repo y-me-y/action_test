@@ -15,6 +15,6 @@ jobs:
       with:
         ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
         APP_TOKEN: ${{ secrets.APP_TOKEN }}
-        ACTIVITY_TYPE: "nurture" #${{ secrets.ACTIVITY_TYPE }}
+        ACTIVITY_TYPE: "Nurture" #${{ secrets.ACTIVITY_TYPE }}
         TOUCHPOINT_TYPE: ${{ secrets.TOUCHPOINT_TYPE }}
         TOUCHPOINT_TAGS: ${{ secrets.TOUCHPOINT_TAGS }}
