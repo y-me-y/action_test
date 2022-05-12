@@ -3,7 +3,6 @@ name: local_call
 on:
   push:
   workflow_dispatch:
-  workflow_call:
 
 jobs:
   build:
