@@ -9,7 +9,7 @@ jobs:
     if:  contains(github.event.issue.labels.*.name, 'Announcements') || contains(github.event.issue.labels.*.name, 'Triage Completed') || contains(github.event.issue.labels.*.name, 'Enablement Plan')
     runs-on: ubuntu-latest
     steps:
-      - uses: uses: andymckay/labeler
-      with:
-        add-labels: "Slack"
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: andymckay/labeler@master
+        with:
+          add-labels: "Slack"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
