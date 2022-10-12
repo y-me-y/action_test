@@ -1,0 +1,15 @@
+name: 'Label Actions'
+
+on:
+  issues:
+    types: [labeled, unlabeled]
+
+jobs:
+  label_issue:
+    if:  contains(github.event.issue.labels.*.name, 'Announcements') || contains(github.event.issue.labels.*.name, 'Triage Completed') || contains(github.event.issue.labels.*.name, 'Enablement Plan')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: uses: andymckay/labeler
+      with:
+        add-labels: "Slack"
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
