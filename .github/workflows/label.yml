@@ -2,11 +2,11 @@ name: 'Label Actions'
 
 on:
   issues:
-    types: [labeled, unlabeled]
+    types: [created, labeled, unlabeled]
 
 jobs:
   label_issue:
-    if:  contains(github.event.issue.labels.*.name, 'Announcements') || contains(github.event.issue.labels.*.name, 'Triage Completed') || contains(github.event.issue.labels.*.name, 'Enablement Plan')
+    if:  contains(github.event.issue.labels.*.name, 'Announcement') || contains(github.event.issue.labels.*.name, 'Triage Completed') || contains(github.event.issue.labels.*.name, 'Enablement Plan')
     runs-on: ubuntu-latest
     steps:
       - uses: andymckay/labeler@master
