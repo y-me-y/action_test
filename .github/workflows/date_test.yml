@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo only
-        run: echo "TODAY=$(date -v+72H +'%m-%d-%Y')"
+        run: echo "TODAY=$(date --date="3 day" +'%m-%d-%Y')"
       - name: Echo to env
-        run: echo "TODAY=$(date -v+72H +'%m-%d-%Y')" >> $GITHUB_ENV
+        run: echo "TODAY=$(date --date="3 day" +'%m-%d-%Y')" >> $GITHUB_ENV
       - name: Echo from env
         run: echo env.TODAY
