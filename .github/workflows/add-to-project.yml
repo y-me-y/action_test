@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Add To Projects
 
 # Controls when the workflow will run
 on:
@@ -29,4 +29,4 @@ jobs:
           # URL of the project to add issues to
           project-url: https://github.com/users/jmassardo/projects/4
           # A GitHub personal access token with write access to the project
-          github-token: ${{ secrets.PROJECT_SECRET }}
+          github-token: ${{ secrets.PROJECTS_SECRET }}
