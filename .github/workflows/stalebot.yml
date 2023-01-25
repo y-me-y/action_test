@@ -1,0 +1,16 @@
+name: 'Identify stale issues'
+on:
+  schedule:
+    # Runs every Monday at 2am
+    - cron: '0 2 * * MON'
+  workflow_dispatch:
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v7
+        with:
+          stale-issue-message: "Hey @jmassardo. This issue hasn't been updated in 90 days. Please take a look and see if it is still relevant. If it is, please add a comment to keep it open. If not, please close it. If it's a product enhancement, add the `customer-feedback-submitted` label so it's exempt from stalebot. Thanks!"
+          days-before-issue-stale: 90
+          days-before-issue-close: -1
+          exempt-issue-labels: 'customer-feedback-submitted'
