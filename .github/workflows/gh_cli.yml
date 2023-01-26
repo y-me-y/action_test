@@ -1,6 +1,7 @@
 name: gh_cli
 on:
-  workflow_dispatch:
+  issues:
+    types: [opened]
 
 jobs:
   gh-cli:
