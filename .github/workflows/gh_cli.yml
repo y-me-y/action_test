@@ -1,0 +1,13 @@
+name: gh_cli
+on:
+  workflow_dispatch:
+
+jobs:
+  gh-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: |
+				  gh issue list
+				env:
+				  GITHUB_TOKEN: {{secrets.GITHUB_TOKEN}}
