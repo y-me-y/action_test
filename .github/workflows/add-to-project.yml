@@ -2,12 +2,13 @@ name: Add To Projects
 on:
   issues:
     types: [opened]
+env:
+  GITHUB_TOKEN: ${secrets.PROJECTS_SECRET}
 jobs:
   add-to-project:
     runs-on: ubuntu-latest
     env:
       PROJECT_NODE_ID: ${secrets.PROJECT_NODE_ID}
-      GITHUB_TOKEN: ${secrets.PROJECTS_SECRET}
       ISSUE_URL: ${{ github.event.issue.html_url }}
     steps:
       - name: Add To GitHub projects
