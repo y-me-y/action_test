@@ -18,9 +18,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Add To GitHub projects
-        uses: actions/add-to-project@v0.4.0
-        with:
-          # URL of the project to add issues to
-          project-url: https://github.com/users/jmassardo/projects/4
-          # A GitHub personal access token with write access to the project
-          github-token: ${{ secrets.PROJECTS_SECRET }}
+        run: |
+          gh api graphql -f query='
+            mutation ($project_node_id: ID!, $issue_url: String!){
+              addProjectV2DraftIssue(input: {projectId: $project_node_id title: $issue_url}) {
+                projectItem {
+                  id
+                }
+              }
+            }' -f project_node_id=$PROJECT_NODE_ID -f issue_url=$ISSUE_URL
+        env:
+          PROJECT_NODE_ID: ${secrets.PROJECT_NODE_ID}
+          PROJECTS_SECRET: ${secrets.PROJECTS_SECRET}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          
