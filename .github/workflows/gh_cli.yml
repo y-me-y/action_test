@@ -10,4 +10,3 @@ jobs:
     steps:
       - name: Run a one-line script
         run: gh issue list
-	
