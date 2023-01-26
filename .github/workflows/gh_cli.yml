@@ -11,7 +11,9 @@ jobs:
     env:
       ISSUE_URL: ${{ github.event.issue.html_url }}
     steps:
-      - name: Run a one-line script
+      - name: login
         run: |
-          gh auth login --hostname github.com
+          gh auth login --hostname github.com >> /dev/null 2>&1
+      - name: view
+        run: |
           gh issue view $ISSUE_URL
