@@ -12,4 +12,6 @@ jobs:
       ISSUE_URL: ${{ github.event.issue.html_url }}
     steps:
       - name: Run a one-line script
-        run: gh issue view $ISSUE_URL
+        run: |
+          gh auth login --hostname github.com
+          gh issue view $ISSUE_URL
