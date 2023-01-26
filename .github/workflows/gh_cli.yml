@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${secrets.PROJECTS_SECRET}
+      ISSUE_URL: ${{ github.event.issue.html_url }}
     steps:
       - name: Run a one-line script
-        run: gh issue list
+        run: gh issue list $ISSUE_URL
