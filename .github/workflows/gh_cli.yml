@@ -11,4 +11,4 @@ jobs:
       ISSUE_URL: ${{ github.event.issue.html_url }}
     steps:
       - name: Run a one-line script
-        run: gh issue list $ISSUE_URL
+        run: gh issue view $ISSUE_URL
